@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body class="text-center">
+    <form action="/register" method="POST" class="form-signin">
+      <img src="images/register-page.png" class="mb-4" width="178" />
+      <h1 class="h3 mb-3 font-weight-normal">join.</h1>
+      <label for="name" class="sr-only">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        placeholder="name"
+        required
+      />
+      <label for="email" class="sr-only">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-control"
+        placeholder="email"
+        required
+      />
+      <label for="password" class="sr-only">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        placeholder="password"
+        required
+      />
+      <button type="submit" class="btn btn-lg btn-login btn-block">
+        register
+      </button>
+      <a href="/login" class="btn btn-lg btn-register btn-block">login</a>
+    </form>
+  </body>
+</html>

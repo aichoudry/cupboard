@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+* {
+  font-family: "Playfair Display", serif;
+}
+
+html,
+body {
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eeecda;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-login {
+  background: #b83b5e;
+}
+
+.btn-register {
+  background: #f08a5d;
+}
+
+.btn-view-back {
+  background: #6a2c70;
+  color: #eeecda;
+}
+
+.btn-four {
+  background: #b0c7bd;
+  font-size: 0.8rem;
+  padding: 2%;
+}
+
+div[class="row"] {
+  outline: 1px dotted rgba(0, 0, 0, 0.25);
+}
+
+div[class="col"] {
+  outline: 1px dotted rgba(0, 0, 0, 0.25);
+}
+
+/* .col-centered {
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+textarea {
+  resize: none;
+}
+
+select {
+  font-family: "Playfair Display";
+}
+
+option {
+  font-family: "Playfair Display", serif;
+}
+
+select option:checked {
+  background: #6a2c70 -webkit-linear-gradient(bottom, #6a2c70 0%, #6a2c70 100%);
+}
+
+.custom-select {
+  font-family: "Playfair Display";
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/auth.css" />
+  </head>
+  <body class="text-center">
+    <div>
+      <form action="/remove/collection" method="POST" class="form-signin">
+        <img src="/images/collection-page.png" class="mb-4" width="178" />
+        <h1 class="h1 mb-3 font-weight-bold">collection.</h1>
+        <h1 class="h4 mb-3 font-weight-normal">
+          a group that contains similar items
+        </h1>
+        <select
+          name="collections"
+          id="collections"
+          class="form-control custom-select mb-3"
+        >
+          <% collections.forEach(collection => { %>
+          <option
+            class="form-control"
+            name="collection"
+            value="<%= collection.id %>"
+            ><%= collection.name %>
+          </option>
+          <% }) %>
+        </select>
+
+        <% if (!disablePost) { %>
+        <button type="submit" class="btn btn-lg btn-login btn-block">
+          delete
+        </button>
+        <% } %>
+        <!-- prettier-ignore -->
+        <% if (disablePost) { %>
+        <button type="submit" class="btn btn-lg btn-login btn-block" disabled>
+          delete
+        </button>
+        <% } %>
+        <a href="/remove" class="btn btn-lg btn-register btn-block">back</a>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/auth.css" />
+  </head>
+  <body class="text-center">
+    <div>
+      <form action="/edit/collection" method="POST" class="form-signin">
+        <img src="/images/collection-page.png" class="mb-4" width="178" />
+        <h1 class="h1 mb-3 font-weight-bold">collection.</h1>
+        <h1 class="h4 mb-3 font-weight-normal">
+          a group that contains similar items
+        </h1>
+        <select
+          name="collections"
+          id="collections"
+          class="form-control custom-select"
+        >
+          <% collections.forEach(collection => { %>
+          <option
+            data-description="<%= collection.description %>"
+            data-name="<%= collection.name %>"
+            value="<%= collection.id %>"
+            class="form-control"
+            ><%= collection.name %>
+          </option>
+          <% }) %>
+        </select>
+        <label for="description" class="sr-only">Description</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="name"
+          class="form-control"
+          placeholder="new name"
+        />
+        <textarea
+          maxlength="255"
+          type="text"
+          id="description"
+          name="description"
+          placeholder="new description"
+          class="form-control"
+          required
+        ></textarea>
+        <select
+          name="items"
+          id="items"
+          class="form-control custom-select mb-3"
+          multiple
+        >
+          <% items.forEach(item => { %>
+          <option
+            data-description="<%= item.description %>"
+            value="<%= item.id %>"
+            class="form-control"
+            ><%= item.name %>
+          </option>
+          <% }) %>
+        </select>
+
+        <% if (!disablePost) { %>
+        <button type="submit" class="btn btn-lg btn-login btn-block">
+          create
+        </button>
+        <% } %>
+        <!-- prettier-ignore -->
+        <% if (disablePost) { %>
+        <button type="submit" class="btn btn-lg btn-login btn-block" disabled>
+          create
+        </button>
+        <% } %>
+        <a href="/edit" class="btn btn-lg btn-register btn-block">back</a>
+      </form>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/collection.js"></script>
+</html>

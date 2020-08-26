@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body class="text-center mt-5">
+    <!-- prettier-ignore -->
+    <div id="collectionsData" data-list='<%= collectionsStr %>'></div>
+    <div id="itemsData" data-list="<%= itemsStr %>"></div>
+    <div class="">
+      <img src="images/view-page.png" class="mb-4" width="178" />
+      <h1 class="h1 mb-4 font-weight-bold">view.</h1>
+      <h1 class="h4 mb-3 font-weight-normal">see your inventory</h1>
+
+      <form class="form-signin">
+        <input type="text" class="form-control" name="search" id="search" />
+        <a href="/" class="btn btn-view-back mb-3 mt-3 from-cotrol">
+          back.
+        </a>
+      </form>
+
+      <div class="container-fluid">
+        <div class="row no-gutters" id="items-row">
+          <% items.forEach(item => { %>
+          <div
+            class="col-xl-2 col-lg-3 col-md-6 col-sm-12 col-12"
+            id="<%= item.id %>"
+          >
+            <div class="card" style="height: 100%; width: 100%;">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.name %></h5>
+                <button class="btn btn-four mb-2">
+                  <%= item.location %>
+                </button>
+                <p class="card-text">
+                  <%= item.description %>
+                </p>
+                <% item.tags.forEach(tag => { %>
+                <a class="btn btn-login mb-2"> <%= tag %> </a>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+
+      <div class="container-fluid mb-5">
+        <div class="row no-gutters" id="collections-row">
+          <% collections.forEach(collection => { %>
+          <div class="col" id="<%= collection.id %>">
+            <div class="card" style="height: 100%; width: 100%;">
+              <div class="card-body">
+                <h5 class="card-title"><%= collection.name %></h5>
+                <p class="card-text">
+                  <%= collection.description %>
+                </p>
+                <% collection.items.forEach(item => { %>
+                <a class="btn btn-register mb-2">
+                  <%= item.name.length > 8 ? item.name.slice(0,8) + "..." :
+                  item.name %>
+                </a>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/view.js"></script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+  <body class="text-center">
+    <div class="">
+      <img src="images/remove-page.png" class="mb-4" width="178" />
+      <h1 class="h1 mb-4 font-weight-bold">remove.</h1>
+      <h1 class="h4 mb-3 font-weight-normal">remove existing entries</h1>
+      <form action="/remove/collection" method="GET">
+        <button type="submit" class="btn btn-lg btn-login btn-block mb-2">
+          collection
+        </button>
+      </form>
+      <form action="/remove/item" method="GET">
+        <button type="submit" class="btn btn-lg btn-login btn-block mb-2">
+          item
+        </button>
+      </form>
+      <form action="/remove/item-from-collection" method="GET">
+        <button type="submit" class="btn btn-lg btn-login btn-block mb-2">
+          items from collection
+        </button>
+      </form>
+      <form action="/" method="GET">
+        <button type="submit" class="btn btn-lg btn-register btn-block mb-2">
+          back
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
